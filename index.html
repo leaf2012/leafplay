@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeafPlay — 你的 iPhone，上车就连接</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#1a7f4b;--green-dk:#0f5132;--green-lt:#e8f5ee;--ink:#17301f;--dim:#5c7265;--card:#ffffff;--bg:#f6faf7}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+/* nav */
+nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e3ede7;z-index:9}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--green-dk)}
+.leaf{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#2fae6d,#0f5132);display:flex;align-items:center;justify-content:center;font-size:17px}
+nav .links{display:flex;gap:26px;font-size:14.5px;color:var(--dim)}
+nav .links a:hover{color:var(--green)}
+/* hero */
+.hero{background:linear-gradient(160deg,#0d3d26 0%,#14532d 55%,#1a7f4b 100%);color:#fff;text-align:center;padding:88px 24px 76px}
+.hero h1{font-size:42px;font-weight:800;letter-spacing:1px;margin-bottom:18px}
+.hero p{font-size:18px;color:#cfe9da;margin-bottom:8px}
+.hero .fit{margin-top:22px;display:inline-block;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 22px;font-size:14px;color:#d9efe2}
+.btn{display:inline-block;background:#2fae6d;color:#fff;font-weight:700;border-radius:10px;padding:13px 34px;font-size:16px;transition:.2s}
+.btn:hover{background:#27985e;transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.55)}
+.btn.sm{padding:9px 22px;font-size:14px}
+/* sections */
+section{padding:64px 0}
+.tag{font-size:12.5px;font-weight:700;letter-spacing:2.5px;color:var(--green);margin-bottom:10px}
+h2{font-size:30px;margin-bottom:14px}
+.sub{color:var(--dim);font-size:16px;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid #e3ede7;border-radius:14px;padding:26px;box-shadow:0 2px 10px rgba(15,81,50,.05)}
+.card .num{font-size:13px;font-weight:800;color:#2fae6d;letter-spacing:1px;margin-bottom:8px}
+.card h3{font-size:17.5px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--dim)}
+/* download */
+.dl{background:linear-gradient(160deg,#f0f9f4,#dcefE3)}
+.dlcard{background:#fff;border:1px solid #e3ede7;border-radius:16px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;box-shadow:0 4px 18px rgba(15,81,50,.08)}
+.dlcard h3{font-size:22px;margin-bottom:6px}
+.dlcard .meta{color:var(--dim);font-size:14.5px;margin-bottom:4px}
+.sha{font-size:12.5px;color:#7a8f80;word-break:break-all;margin-top:12px;padding:10px 14px;background:var(--bg);border-radius:8px;font-family:ui-monospace,Menlo,monospace}
+.dlbtns{display:flex;flex-direction:column;gap:12px;min-width:230px}
+.note{font-size:13px;color:#a08a3c;background:#fdf6e3;border:1px solid #f0e2b0;border-radius:8px;padding:10px 14px;margin-top:18px}
+.note.green{color:#2a6a48;background:var(--green-lt);border-color:#c8e6d5}
+/* steps */
+.step{display:flex;gap:16px;align-items:flex-start}
+.step .n{flex:0 0 44px;height:44px;border-radius:50%;background:var(--green-lt);color:var(--green-dk);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px}
+/* license */
+.lic{background:#10331f;color:#d9efe2;border-radius:16px;padding:40px}
+.lic h2{color:#fff}
+.lic p{color:#a9cfb9;font-size:15px}
+.lic .mc{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:16px 20px;margin-top:18px;font-size:14.5px}
+footer{border-top:1px solid #e3ede7;padding:34px 0;text-align:center;color:var(--dim);font-size:13.5px}
+@media(max-width:720px){.hero h1{font-size:30px}.dlcard{grid-template-columns:1fr}nav .links{display:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand"><span class="leaf">🍃</span>LeafPlay</div>
+  <div class="links"><a href="#download">下载</a><a href="#start">使用步骤</a><a href="#license">授权激活</a><a href="#updates">更新日志</a></div>
+</div></nav>
+
+<header class="hero">
+  <h1>你的 iPhone，上车就连接。</h1>
+  <p>为适配的安卓车机带来熟悉的 CarPlay。</p>
+  <p>导航、音乐与通话，随你一起出发。</p>
+  <div class="fit">适配 2023 · 2024 · 2025 款红旗 HS5</div>
+  <div style="margin-top:34px"><a class="btn" href="#download">下载 LeafPlay 2.0.1</a></div>
+</header>
+
+<section><div class="wrap">
+  <div class="tag">WHAT'S INSIDE</div>
+  <h2>连接之后，熟悉的日常。</h2>
+  <p class="sub">导航分屏、音乐与通话，上车后一切照旧。</p>
+  <div class="grid">
+    <div class="card"><h3>📶 无线 CarPlay</h3><p>蓝牙配对后自动无线连接，上车即用，无需插线。</p></div>
+    <div class="card"><h3>🔗 USB 有线连接</h3><p>数据线直连，稳定低延迟，兼容更多车机版本。</p></div>
+    <div class="card"><h3>🗺️ 原厂仪表投屏</h3><p>导航信息投至仪表盘，与原车体验无缝衔接。</p></div>
+    <div class="card"><h3>🎵 熟悉的车载生态</h3><p>导航、音乐、播客与通话，手机上的日常原样上车。</p></div>
+  </div>
+</div></section>
+
+<section class="dl" id="download"><div class="wrap">
+  <div class="tag">DOWNLOAD &amp; COMPATIBILITY</div>
+  <h2>适配你的红旗 HS5。</h2>
+  <p class="sub">支持 2023 / 2024 / 2025 款红旗 HS5。</p>
+  <div class="dlcard">
+    <div>
+      <h3>LeafPlay 2.0.1（正式版）</h3>
+      <div class="meta">正式 Release · 9.77 MB · versionCode 201</div>
+      <div class="meta">安装 APK 需车机 <b>Android 9.0（API 28）及以上</b></div>
+      <div class="meta">无线 CarPlay 适配车机软件版本 <b>3212 / 3222</b>，需原厂热点服务</div>
+      <div class="meta">在车机「车辆设置 → 系统 → 关于本机」查看软件版本</div>
+      <div class="sha">SHA-256<br>f1002b524ab54af105daaf1b54919c2dba109ee4f2ca89f7e0bf4d9cd69d417e</div>
+    </div>
+    <div class="dlbtns">
+      <a class="btn" href="https://gitee.com/leaf2012/leafplay-auth/raw/master/v1/updates/com.shihab.diplay/artifacts/f1002b524ab54af105daaf1b54919c2dba109ee4f2ca89f7e0bf4d9cd69d417e.apk">下载 LeafPlay 2.0.1</a>
+      <div style="font-size:12.5px;color:var(--dim);text-align:center">已装旧版本？在应用内<br>「关于 → 检查更新」直接升级</div>
+    </div>
+  </div>
+  <div class="note green">💡 已安装 LeafPlay 的车机可直接在「关于页 → 检查更新」升级，1.0.12 / 1.1.5 及以上版本均已支持。</div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <div class="tag">GET STARTED</div>
+  <h2>连接日常，只需几步。</h2>
+  <p class="sub">从第一次安装，到每一次上车。</p>
+  <div class="grid">
+    <div class="card"><div class="step"><div class="n">01</div><div><h3>安装到车机</h3><p>下载 APK，通过车机支持的方式安装。打开 LeafPlay，按提示完成连接所需权限。</p></div></div></div>
+    <div class="card"><div class="step"><div class="n">02</div><div><h3>配对你的 iPhone</h3><p>开启手机 Wi-Fi 与蓝牙，与车机完成蓝牙配对；也可切换 USB 有线连接。</p></div></div></div>
+    <div class="card"><div class="step"><div class="n">03</div><div><h3>打开 CarPlay</h3><p>首次连接时在 iPhone 上允许使用 CarPlay，导航、音乐与通话即刻上车。</p></div></div></div>
+  </div>
+</div></section>
+
+<section id="license"><div class="wrap">
+  <div class="lic">
+    <div class="tag" style="color:#7fd4a8">LICENSE</div>
+    <h2>授权与激活。</h2>
+    <p>LeafPlay 安装后提供 <b style="color:#fff">24 小时完整体验</b>，期间全部功能可用。</p>
+    <div class="mc">
+      📋 体验到期后，在车机「关于」页面查看<b style="color:#fff">本机机器码</b>，<br>
+      将机器码发给管理员登记付款后，约半分钟内自动激活为永久授权。
+    </div>
+    <p style="margin-top:16px">已激活设备支持后续所有版本免费更新。</p>
+  </div>
+</div></section>
+
+<section id="updates"><div class="wrap">
+  <div class="tag">UPDATES</div>
+  <h2>更新日志。</h2>
+  <div class="card" style="margin-bottom:14px"><h3>2.0.1（正式版）</h3><p>优化了连接速度，提升了稳定性，解决了一些已知问题。</p></div>
+  <div class="card" style="margin-bottom:14px"><h3>1.1.5</h3><p>更新下载与安装体验优化；授权体系升级。</p></div>
+  <div class="card"><h3>1.0.12</h3><p>红旗 HS5 适配与稳定性改进。</p></div>
+</div></section>
+
+<footer><div class="wrap">
+  LeafPlay — 让 CarPlay 上车更简单。<br>
+  下载与安装问题请联系管理员 · 支持 2023/2024/2025 款红旗 HS5
+</div></footer>
+
+</body>
+</html>
